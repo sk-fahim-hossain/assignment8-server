@@ -121,16 +121,10 @@ async function run() {
       const result = await classCollection.find(filter).toArray();
       res.send(result);
     });
-    app.get('/classes/:email', async (req, res) => {
-   
-      const filter = req.params.email;
-      console.log(filter)
-      const result = await classCollection.find(filter).toArray();
-      res.send(result);
-    });
+  
     app.get('/classes/:email', async (req, res) => {
       const email = req.params.email;
-      const filter = {instructorEmail: email}
+      const filter = {instructorEmail:email}
       const result = await classCollection.find(filter).toArray();
       res.send(result);
     });
